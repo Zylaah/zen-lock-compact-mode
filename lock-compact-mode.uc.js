@@ -15,7 +15,7 @@
   const BUTTON_ID = "zen-toggle-compact-mode";
   const AREA_ID = "zen-sidebar-top-buttons";
   /** Zen's Windows floor is 152px, or 117px plus caption buttons. */
-  const WINDOWS_MIN_EXTRA_PX = 35;
+  const WINDOWS_MIN_EXTRA_PX = 40;
 
   function isWindows() {
     try {
