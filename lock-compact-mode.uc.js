@@ -21,6 +21,9 @@
     if (button.getAttribute("removable") !== "false") {
       button.setAttribute("removable", "false");
     }
+    if (button.getAttribute("overflows") !== "false") {
+      button.setAttribute("overflows", "false");
+    }
     return true;
   }
 
@@ -40,11 +43,12 @@
     if (button._zenLockCompactModeWatching) return;
     button._zenLockCompactModeWatching = true;
     const observer = new MutationObserver(() => {
-      if (button.getAttribute("removable") !== "false") {
-        button.setAttribute("removable", "false");
-      }
+      lockButton();
     });
-    observer.observe(button, { attributes: true, attributeFilter: ["removable"] });
+    observer.observe(button, {
+      attributes: true,
+      attributeFilter: ["removable", "overflows"],
+    });
   }
 
   function apply() {
